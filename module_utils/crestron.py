@@ -1,3 +1,4 @@
+from time import sleep
 import paramiko
 
 # For defining repetitive module arguments
@@ -58,18 +59,28 @@ def set_sntp_server(server, p):
 def set_auth(enable, username, password, p):
     # Create a shell/channel
     s = p.invoke_shell()
+    sleep(.5)
+    s.recv(9999)
 
     # Run command
     s.send("AUTHENTICATION " + (lambda enable: "on" if enable else "off")(enable) + "\n")
+    sleep(.5)
+    s.recv(9999)
 
     # If set to enable, fill out the prompt
     if enable:
         # Username:
         s.send(username + "\n")
+        sleep(.5)
+        s.recv(9999)
 
         # Enter + Validate Password:
         s.send(password + "\n")
+        sleep(.5)
+        s.recv(9999)
+        
         s.send(password + "\n")
+        sleep(.5)
 
     # Check for errors
     out = str(s.recv(9999))
