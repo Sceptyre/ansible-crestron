@@ -58,11 +58,25 @@ def set_sntp_server(server, p):
         p=p
     )
 
-def set_auth(enable, p):
-    return _exec_and_validate(
-        c="AUTHENTICATION " + (lambda enable: "on" if enable else "off")(enable),
-        p=p
+def set_auth(enable, username, password, p):
+    stdin, stdout, stderr = p.exec_command(
+        "AUTHENTICATION " + (lambda enable: "on" if enable else "off")(enable)
     )
+
+    if enable:
+        # Username:
+        stdin.write(username + "\r\n")
+
+        # Enter + Validate Password:
+        stdin.write(password + "\r\n")
+        stdin.write(password + "\r\n")
+
+    # Check for error
+    out = " ".join(stdout.readlines())
+    if "ERROR: " in out:
+        raise paramiko.SSHException("Error occured while enabling authentication: " + out.split("ERROR: ")[1].split("\n")[0])
+
+    return out
 
 def add_user(username, password, p):
     return _exec_and_validate(
