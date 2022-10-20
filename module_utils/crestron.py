@@ -18,9 +18,6 @@ def _exec_and_validate(c,p):
 
     return out
 
-def _parse_response(r):
-    pass
-
 # Creates a paramiko ssh client
 def get_client(hostname, username, password, port = 22):
     # Init object
