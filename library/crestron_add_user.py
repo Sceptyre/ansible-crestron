@@ -31,7 +31,7 @@ def main():
         mod.exit_json(changed=True, meta=r)
 
     except Exception as err:
-        mod.fail_json(err)
+        mod.fail_json(err.message)
 
 if __name__ == '__main__':
     main()
