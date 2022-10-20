@@ -8,8 +8,7 @@ def main():
         "mode": {
             "type": "str", 
             "required": True, 
-            "choices": ["off", "self", "ca"], 
-            "default": "ca"
+            "choices": ["off", "self", "ca"]
         }
     })
 
