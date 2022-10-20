@@ -3,12 +3,12 @@ from ansible.module_utils.basic import *
 import ansible.module_utils.crestron as crestron
 
 def main():
-    mod = AnsibleModule(
-        argument_spec={
-            **crestron.basic_arg_spec,
-            "enabled": {"type": "bool", "required": True}
-        }
-    )
+    args = crestron.basic_arg_spec.copy()
+    args.update({
+        "enabled": {"type": "bool", "required": True}
+    })
+
+    mod = AnsibleModule(argument_spec=args)
 
     try:
         # Get ssh client for crestron panel
