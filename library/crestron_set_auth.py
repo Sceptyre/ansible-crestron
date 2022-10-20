@@ -18,7 +18,7 @@ def main():
             password=mod.params.get("password")
         )
         # Execute command
-        r = crestron.set_ssl(
+        r = crestron.set_auth(
             enable=mod.params.get("enabled"),
             p=p
         )
