@@ -65,7 +65,6 @@ def set_auth(enable, username, password, p):
     # Run command
     s.send("AUTHENTICATION " + (lambda enable: "on" if enable else "off")(enable) + "\n")
     sleep(.5)
-    s.recv(9999)
 
     # If set to enable, fill out the prompt
     if enable:
@@ -78,7 +77,7 @@ def set_auth(enable, username, password, p):
         s.send(password + "\n")
         sleep(.5)
         s.recv(9999)
-        
+
         s.send(password + "\n")
         sleep(.5)
 
