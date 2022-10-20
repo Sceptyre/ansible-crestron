@@ -18,7 +18,7 @@ def main():
             password=mod.params.get("password")
         )
         # Execute command
-        crestron.au_enable(
+        r = crestron.au_enable(
             enable=mod.params.get("enabled"),
             p=p
         )
@@ -26,7 +26,7 @@ def main():
         p.close()
 
         # Out
-        mod.exit_json(changed=True)
+        mod.exit_json(changed=True, meta=r)
 
     except Exception as err:
         mod.fail_json(err)
