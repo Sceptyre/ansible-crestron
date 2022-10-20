@@ -59,17 +59,22 @@ def set_sntp_server(server, p):
     )
 
 def add_user(username, password, p):
-    _exec_and_validate(
+    return _exec_and_validate(
         c="adduser -n:" + username + "-p:" + password,
         p=p
     )
 
 def set_ssl(mode, p):
-    _exec_and_validate(
+    return _exec_and_validate(
         c='SSL ' + mode,
         p=p
     )
-    pass
+
+def reboot(p):
+    return _exec_and_validate(
+        c="REBOOT",
+        p=p
+    )
 
 def version(p):
     return _exec_and_validate(
