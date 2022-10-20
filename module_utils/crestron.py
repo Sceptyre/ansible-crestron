@@ -63,12 +63,3 @@ def version(p):
         c="version",
         p=p
     )
-
-def main():
-    p = get_client("10.254.103.239" ,"crestron", "")
-    print(version(p))
-
-    p.close()
-
-if __name__ == '__main__':
-    main()
