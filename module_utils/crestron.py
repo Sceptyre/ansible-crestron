@@ -64,6 +64,13 @@ def add_user(username, password, p):
         p=p
     )
 
+def set_ssl(mode, p):
+    _exec_and_validate(
+        c='SSL ' + mode,
+        p=p
+    )
+    pass
+
 def version(p):
     return _exec_and_validate(
         c="version",
