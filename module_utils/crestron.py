@@ -58,6 +58,12 @@ def set_sntp_server(server, p):
         p=p
     )
 
+def set_auth(enable, p):
+    return _exec_and_validate(
+        c="AUTHENTICATION " + (lambda enable: "on" if enable else "off")(enable),
+        p=p
+    )
+
 def add_user(username, password, p):
     return _exec_and_validate(
         c="adduser -n:" + username + "-p:" + password,
