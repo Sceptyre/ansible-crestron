@@ -1,11 +1,12 @@
 #!/usr/bin/python
 from ansible.module_utils.basic import *
-import ansible.module_utils.crestron as crestron
+import ansible_collections.community.crestron_ansible.module_utils.crestron as crestron
 
 def main():
     args = crestron.basic_arg_spec.copy()
     args.update({
-        "time": {"type": "str", "required": True}
+        "new_username": {"type": "str", "required": True},
+        "new_password": {"type": "str", "required": True}
     })
 
     mod = AnsibleModule(argument_spec=args)
@@ -18,8 +19,9 @@ def main():
             password=mod.params.get("password")
         )
         # Execute command
-        r = crestron.au_time(
-            time=mod.params.get("time"),
+        r = crestron.add_user(
+            username=mod.params.get("new_username"),
+            password=mod.params.get("new_password"),
             p=p
         )
         # Close client

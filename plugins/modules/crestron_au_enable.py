@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from ansible.module_utils.basic import *
-import ansible.module_utils.crestron as crestron
+import ansible_collections.community.crestron_ansible.module_utils.crestron as crestron
 
 def main():
     args = crestron.basic_arg_spec.copy()

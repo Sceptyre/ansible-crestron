@@ -1,15 +1,11 @@
 #!/usr/bin/python
 from ansible.module_utils.basic import *
-import ansible.module_utils.crestron as crestron
+import ansible_collections.community.crestron_ansible.module_utils.crestron as crestron
 
 def main():
     args = crestron.basic_arg_spec.copy()
     args.update({
-        "mode": {
-            "type": "str", 
-            "required": True, 
-            "choices": ["off", "self", "ca"]
-        }
+        "server": {"type": "str", "required": True}
     })
 
     mod = AnsibleModule(argument_spec=args)
@@ -22,8 +18,8 @@ def main():
             password=mod.params.get("password")
         )
         # Execute command
-        r = crestron.set_ssl(
-            mode=mod.params.get("mode"),
+        r = crestron.set_sntp_server(
+            server=mod.params.get("server"),
             p=p
         )
         # Close client

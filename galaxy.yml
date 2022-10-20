@@ -1,0 +1,15 @@
+---
+namespace: "ansible_crestron"
+name: "ansible_crestron"
+description: ""
+
+version: "1.0.12"
+readme: "README.md"
+authors:
+    - "Abdellah Fytahi"
+license:
+    - "MIT"
+tags:
+    - demo
+    - collection
+repository: "https://www.github.com/my_org/my_collection"
