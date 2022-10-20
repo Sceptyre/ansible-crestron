@@ -18,7 +18,7 @@ def main():
             password=mod.params.get("password")
         )
         # Execute command
-        r = crestron.sntp_server(
+        r = crestron.set_sntp_server(
             server=mod.params.get("server"),
             p=p
         )

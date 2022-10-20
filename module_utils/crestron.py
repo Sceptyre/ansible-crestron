@@ -52,7 +52,7 @@ def au_time(time, p):
         p=p
     )
 
-def sntp_server(server, p):
+def set_sntp_server(server, p):
     return _exec_and_validate(
         c='SNTP SERVER:' + server,
         p=p
