@@ -83,6 +83,8 @@ def set_auth(enable, username, password, p):
 
     # Check for errors
     out = str(s.recv(9999))
+    s.close()
+    
     if "ERROR: " in out:
         raise paramiko.SSHException("Error occured while enabling authentication: " + out.split("ERROR: ")[1].split("\n")[0])
 
