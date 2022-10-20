@@ -2,9 +2,9 @@ import paramiko
 
 # For defining repetitive module arguments
 basic_arg_spec = {
-    "hostname": {"type": "string", "required": True},
-    "username": {"type": "string", "required": True},
-    "password": {"type": "string", "required": False}
+    "hostname": {"type": "str", "required": True},
+    "username": {"type": "str", "required": True},
+    "password": {"type": "str", "required": False}
 }
 
 # Utility function for standardizing command execution and handling

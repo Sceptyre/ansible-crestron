@@ -5,7 +5,7 @@ import ansible.module_utils.crestron as crestron
 def main():
     args = crestron.basic_arg_spec.copy()
     args.update({
-        "server": {"type": "string", "required": True}
+        "server": {"type": "str", "required": True}
     })
 
     mod = AnsibleModule(argument_spec=args)

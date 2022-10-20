@@ -5,7 +5,7 @@ import ansible.module_utils.crestron as crestron
 def main():
     args = crestron.basic_arg_spec.copy()
     args.update({
-        "time": {"type": "string", "required": True}
+        "time": {"type": "str", "required": True}
     })
 
     mod = AnsibleModule(argument_spec=args)
