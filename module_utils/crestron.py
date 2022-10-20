@@ -58,6 +58,12 @@ def set_sntp_server(server, p):
         p=p
     )
 
+def add_user(username, password, p):
+    _exec_and_validate(
+        c="adduser -n:" + username + "-p:" + password,
+        p=p
+    )
+
 def version(p):
     return _exec_and_validate(
         c="version",
