@@ -1,9 +1,9 @@
 ---
-namespace: "ansible_crestron"
+namespace: "sceptyre"
 name: "ansible_crestron"
 description: ""
 
-version: "1.0.0"
+version: "1.0.1"
 readme: "README.md"
 authors:
     - "Abdellah Fytahi"

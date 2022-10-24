@@ -1,11 +1,11 @@
 #!/usr/bin/python
 from ansible.module_utils.basic import *
-import ansible_collections.ansible_crestron.ansible_crestron.plugins.module_utils.crestron as crestron
+import ansible_collections.sceptyre.ansible_crestron.plugins.module_utils.crestron as crestron
 
 def main():
     args = crestron.basic_arg_spec.copy()
     args.update({
-        "enabled": {"type": "bool", "required": True}
+        "server": {"type": "str", "required": True}
     })
 
     mod = AnsibleModule(argument_spec=args)
@@ -18,8 +18,8 @@ def main():
             password=mod.params.get("password")
         )
         # Execute command
-        r = crestron.au_enable(
-            enable=mod.params.get("enabled"),
+        r = crestron.set_sntp_server(
+            server=mod.params.get("server"),
             p=p
         )
         # Close client
