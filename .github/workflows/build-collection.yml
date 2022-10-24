@@ -28,8 +28,8 @@ jobs:
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          automatic_release_tag: "v${{ steps.cversion.outputs.version }}"
           prerelease: true
-          title: "Development Build"
+          title: "Release v${{ steps.cversion.outputs.version }}"
           files: |
             *.tar.gz
