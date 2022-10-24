@@ -79,7 +79,7 @@ def set_auth(enable, username, password, p):
         s.recv(9999)
 
         s.send(password + "\n")
-        sleep(.5)
+        sleep(10)
 
     # Check for errors
     out = str(s.recv(9999))
