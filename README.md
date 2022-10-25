@@ -1,7 +1,6 @@
 # sceptyre.ansible_crestron
 This is an Ansible Collection built for managing crestron devices
 
----
 ## Authentication
 All modules use the following variables for authentication
 | Variable  | Type      |
