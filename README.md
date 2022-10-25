@@ -29,3 +29,26 @@ Set Auto Update Time
 | Variable      | Type      |
 | ---           | ---       |
 | time          | string    |
+
+### sceptyre.ansible_crestron.reboot
+Reboot Device
+
+### sceptyre.ansible_crestron.set_auth
+Enable/Disable Authentication
+| Variable      | Type      |
+| ---           | ---       |
+| enabled       | bool      |
+| new_username  | string    |
+| new_password  | string    |
+
+### sceptyre.ansible_crestron.set_sntp_server
+Set NTP Server
+| Variable      | Type      |
+| ---           | ---       |
+| server        | string    |
+
+### sceptyre.ansible_crestron.set_ssl
+Set SSL Mode
+| Variable      | Type                  |
+| ---           | ---                   |
+| mode          | enum(off, self, ca)   |
