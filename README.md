@@ -23,15 +23,11 @@ Enable/Disable Auto Update
 | ---           | ---       |
 | enabled       | bool      |
 
-
 ### sceptyre.ansible_crestron.au_time
 Set Auto Update Time
 | Variable      | Type      |
 | ---           | ---       |
 | time          | string    |
-
-### sceptyre.ansible_crestron.reboot
-Reboot Device
 
 ### sceptyre.ansible_crestron.set_auth
 Enable/Disable Authentication
@@ -52,3 +48,6 @@ Set SSL Mode
 | Variable      | Type                  |
 | ---           | ---                   |
 | mode          | enum(off, self, ca)   |
+
+### sceptyre.ansible_crestron.reboot
+Reboot Device
